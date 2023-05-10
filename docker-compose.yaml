@@ -1,0 +1,6 @@
+version: '3.8'
+
+services:
+  lollu_bot:
+    build: .
+    container_name: lollu_bot

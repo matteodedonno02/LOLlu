@@ -1,0 +1,6 @@
+players = ["List", "Of", "Existing", "Player"]
+RIOT_KEY = "your-riot-key"
+ENDPOINT = "https://euw1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/"
+ENDPOINT2 = "https://euw1.api.riotgames.com/lol/summoner/v4/summoners/by-name/" 
+BOT_KEY = "your-bot-id"
+CHAT_ID = "your-chat-id"
