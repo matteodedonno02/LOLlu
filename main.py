@@ -8,11 +8,12 @@ import requests
 import telegram
 import asyncio
 import time
+import threading
 
 def main():
     players_ids = get_player_id_map(players)
-
     loop = asyncio.new_event_loop()
+
     asyncio.set_event_loop(loop)
     tasks = []
     for player, id in players_ids.items():
@@ -29,7 +30,7 @@ async def send_msg(name, id):
                 is_playing = True
         else:
             is_playing = False
-        time.sleep(60)
+        await asyncio.sleep(60)
 
 def get_player_id_map(players):
     map = {}
@@ -41,6 +42,7 @@ def get_player_id_map(players):
 
 def fetch_api(id):
     response = requests.get(ENDPOINT + id + "?api_key=" + RIOT_KEY)
+    print(response)
     if response.status_code == 200:
         return True
     else:
